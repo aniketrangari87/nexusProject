@@ -62,10 +62,30 @@ function Navbar() {
       </nav>
 
       <ul className={`flex justify-center  gap-5 flex-col items-center  w-full ${isOpen ? "block ":"hidden"} `}>
-          <li className="">Home</li>
-          <li className="">About</li>
-          <li className="">Service</li>
-          <li className="">Contact Us </li>
+      <li>
+            <NavLink className="hover:text-cyan-600" to='/'>Home</NavLink>
+          </li>
+          <li>
+            <NavLink className="hover:text-cyan-600" to='/about'>About</NavLink>
+          </li>
+          <li>
+            <NavLink className="hover:text-cyan-600"to='/services'>Services</NavLink>
+          </li>
+          <li>
+            <NavLink  className="hover:text-cyan-600"to='/contact'>Contact us </NavLink>
+          </li>
+          <li>
+            {
+              isLogin?<NavLink className="text-cyan-600" onClick={logoutHandler}> Logout</NavLink> : <NavLink className="text-cyan-600 py-2 rounded-lg px-3" to='/login'>Login</NavLink>
+            }
+            <br />
+            <br />
+            {
+              isLogin?<NavLink className="text-cyan-600 " onClick={logoutHandler}> Logout</NavLink> : <NavLink className="text-cyan-600 py-5 rounded-lg px-3" to='/signup'>Signup</NavLink>
+            }
+            
+          </li>
+       
         </ul>
 
         <Routes>
